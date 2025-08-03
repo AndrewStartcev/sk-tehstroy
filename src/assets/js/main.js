@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Находим все элементы с классом has-submenu
   const submenuParents = document.querySelectorAll('.menu-parent');
+  const header = document.querySelector('.header');
 
-  // Для каждого элемента
+  function checkHeader() {
+    if (window.scrollY > 30) {
+      header.classList.add('header-show');
+    } else {
+      header.classList.remove('header-show');
+    }
+  }
+
   submenuParents.forEach(function (parent) {
     const link = parent.querySelector('.menu-parent__item');
     const submenu = parent.querySelector('.sub-menu');
@@ -55,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Закрываем подменю при клике вне его области
   document.addEventListener('click', function (e) {
     if (window.innerWidth <= 768) {
       const isClickInside = Array.from(submenuParents).some(parent => parent.contains(e.target));
@@ -67,4 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+
+  window.addEventListener('load', checkHeader);
+  window.addEventListener('scroll', checkHeader);
 });

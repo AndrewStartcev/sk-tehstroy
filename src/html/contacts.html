@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="Ru-ru">
+  @@include("chunk/head.html", {"title": "Контакты",})
+
+  <body>
+    @@include("chunk/header.html")
+
+    <main class="main">
+      <nav class="breadcrumbs">
+        <ul class="breadcrumbs__container">
+          <li><a href="#">Главная</a></li>
+          <li><span>Контакты</span></li>
+        </ul>
+      </nav>
+      <section class="contacts-page">
+        <div class="contacts-page__container">
+          <div class="contacts-page__header">
+            <h1>
+              Контактная <br />
+              информация
+            </h1>
+          </div>
+          <div class="contacts-page__body">
+            <div class="contacts-page__list">
+              <div class="contacts-page__item">
+                <span>АДРЕС</span>
+                <p>г. Москва, Зубовский бульвар, д. 11а</p>
+              </div>
+              <div class="contacts-page__item">
+                <span>Телефон</span>
+                <a href="tel:+79202184888">+7 (920) 218 48 88</a>
+              </div>
+              <div class="contacts-page__item">
+                <span>EMAIL</span>
+                <a href="mailto:info.info@yandex.ru">info.info@yandex.ru</a>
+              </div>
+            </div>
+            <div class="contacts-page__social">
+              <a href="#"><img src="assets/img/vk.svg" alt="" /></a>
+              <a href="#"><img src="assets/img/telegram.svg" alt="" /></a>
+              <a href="#"><img src="assets/img/whatsapp.svg" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contacts-page-map">
+        <script
+          type="text/javascript"
+          charset="utf-8"
+          async
+          src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aad503bd5ef26bf436754e1c8b47a2d147525819d51f7d1ee7315ab9de7fb871b&amp;width=100%25&amp;lang=ru_RU&amp;scroll=false"
+        ></script>
+      </section>
+    </main>
+
+    @@include("chunk/footer.html")
+    <!--  -->
+    @@include("chunk/script.html")
+  </body>
+</html>

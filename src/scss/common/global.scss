@@ -54,7 +54,12 @@ body {
 footer {
   margin-top: auto;
 }
-
+.main {
+  padding-top: 70px;
+  @include media-tablet-horizontal {
+    padding-top: 60px;
+  }
+}
 .container,
 [class*='__container'] {
   max-width: $mediaWidthLaptop;
