@@ -13,9 +13,9 @@ img {
 a {
   text-decoration: none;
   transition: all 0.5s ease;
-  color: #3fb680;
+  color: #44798e;
   @include hover {
-    color: darken($color: #3fb680, $amount: 10);
+    color: darken($color: #44798e, $amount: 10);
   }
 }
 a,
@@ -30,11 +30,11 @@ html {
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #e9ecf1;
+    background-color: #e0e0e0;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #3fb680;
+    background-color: #44798e;
   }
 }
 body {
@@ -47,8 +47,12 @@ body {
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  background-color: #f1f3f6;
-  color: rgba(#0a1f17, 0.8);
+  background-color: #e0e0e0;
+  color: #1e1f21;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .container,
@@ -59,6 +63,9 @@ body {
   padding: 0;
   @include media-tablet-horizontal {
     max-width: 100%;
+    padding: 0 20px;
+  }
+  @include media-mobile-horizontal {
     padding: 0 10px;
   }
 }
@@ -67,7 +74,4 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  footer {
-    margin-top: auto;
-  }
 }

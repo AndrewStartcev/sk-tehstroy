@@ -1,0 +1,208 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 0;
+  &-show {
+    background: #e0e0e0;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__logo {
+    color: #1e1f21;
+    font-family: $font-family-heading;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  &__menu {
+    & > ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin: 0;
+      padding: 8px 0;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      a {
+        color: #1e1f21;
+        font-family: $font-family-heading;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+
+        @include hover() {
+          color: #44798e;
+        }
+      }
+    }
+    .menu-parent {
+      position: relative;
+      &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        &::after {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 6px;
+          background: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M9 0.75L5 4.75L1 0.75' stroke='%2344798E' /%3E%3C/svg%3E%0A")
+            center center / contain no-repeat;
+          transition: all 0.3s ease;
+        }
+        &.show {
+          &::after {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+    .sub-menu {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: -14px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: #cbcbcb;
+      padding: 5px 14px;
+      border-radius: 10px;
+      min-width: 250px;
+      li {
+        a {
+          color: #343b3f;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  &__addres,
+  &__tel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    color: #44798e;
+    text-align: right;
+    font-family: $font-family-heading;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    &::after {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      background: url("data:image/svg+xml,%3Csvg width='14' height='18' viewBox='0 0 14 18' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M7.30808 16.9782C7.22738 17.0538 7.11878 17.1 6.99998 17.1C6.88088 17.1 6.77228 17.0538 6.69188 16.9782L2.27648 12.8298C0.936676 11.571 0.0999756 9.7833 0.0999756 7.8C0.0999756 3.9894 3.18908 0.9 6.99998 0.9C10.8106 0.9 13.9 3.9894 13.9 7.8C13.9 9.7833 13.0633 11.571 11.7235 12.8298L7.30808 16.9782ZM6.99998 5.1C5.50868 5.1 4.29998 6.3087 4.29998 7.8C4.29998 9.2913 5.50868 10.5 6.99998 10.5C8.49128 10.5 9.69998 9.2913 9.69998 7.8C9.69998 6.3087 8.49128 5.1 6.99998 5.1Z' fill='%231E1F21' /%3E%3C/svg%3E%0A")
+        center center / contain no-repeat;
+    }
+  }
+
+  &__tel {
+    &::after {
+      background: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M10.7597 8.07553L12.4061 9.72192C12.7341 10.0499 12.7341 10.5817 12.4061 10.9097C10.6329 12.6829 7.82564 12.8824 5.81946 11.3778L5.70251 11.29C4.18922 10.1551 2.84493 8.81078 1.70996 7.29749L1.62224 7.18054C0.117611 5.17436 0.317118 2.36709 2.09034 0.593866C2.41833 0.265883 2.95009 0.265883 3.27808 0.593867L4.92447 2.24026C5.315 2.63079 5.315 3.26395 4.92447 3.65447L3.78983 4.78912C3.5696 5.00935 3.515 5.34579 3.65429 5.62436C4.45948 7.23474 5.76526 8.54052 7.37564 9.34571C7.65421 9.485 7.99065 9.4304 8.21088 9.21017L9.34552 8.07553C9.73605 7.685 10.3692 7.685 10.7597 8.07553Z' fill='%231E1F21' /%3E%3C/svg%3E%0A")
+        center center / contain no-repeat;
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+
+@include media-tablet-horizontal {
+  .header {
+    padding: 10px 0;
+
+    &__container {
+      gap: 10px;
+    }
+
+    &__logo {
+      font-size: 20px;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__contacts {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-left: auto;
+      gap: 8px 20px;
+    }
+
+    &__addres,
+    &__tel {
+      font-size: 14px;
+      white-space: nowrap;
+      &::after {
+        order: -1;
+      }
+    }
+
+    &__burger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: #cbcbcb;
+      border-radius: 8px;
+      padding: 17px 7px;
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 26px;
+        height: 1px;
+        background: #44798e;
+      }
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .header {
+    &__logo {
+      font-size: 20px;
+    }
+    &__tel {
+      font-size: 14px;
+    }
+    &__addres {
+      display: none;
+    }
+  }
+}

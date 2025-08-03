@@ -1,4 +1,14 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../font/bebasneuecyrillic.eot');
+  src: url('../font/bebasneuecyrillic.eot') format('embedded-opentype'),
+    url('../font/bebasneuecyrillic.woff2') format('woff2'),
+    url('../font/bebasneuecyrillic.woff') format('woff'),
+    url('../font/bebasneuecyrillic.ttf') format('truetype'),
+    url('../font/bebasneuecyrillic.svg#bebasneuecyrillic') format('svg');
+  font-style: normal;
+  font-weight: 700;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
-$font-family-primary: 'Manrope', sans-serif;
+$font-family-primary: 'Inter Tight', sans-serif;
+$font-family-heading: 'Bebas Neue', sans-serif;
