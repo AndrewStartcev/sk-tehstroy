@@ -1,0 +1,75 @@
+.form-input {
+  width: 100%;
+  input {
+    width: 100%;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+    padding: 19px 20px;
+    color: #343b3f;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%;
+    outline: none;
+    &:focus-within {
+      border-color: #44798e;
+    }
+  }
+  &.error-fields {
+    input {
+      border-color: red;
+    }
+    span {
+      display: block;
+      color: red;
+      font-size: 12px;
+      padding-top: 8px;
+    }
+  }
+}
+
+.form-acceptance {
+  input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    + span {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding-left: 20px;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 100%;
+      a {
+        color: #44798e;
+        letter-spacing: -0.2px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+      &::before {
+        display: block;
+        content: '';
+        width: 14px;
+        height: 14px;
+        border: 1px solid #44798e;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    &:checked + span::before {
+      background: #44798e
+        url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5562 10.2999L2.6687 7.41241L3.49353 6.58757L5.55708 8.64878L5.5562 8.64966L10.5058 3.70007L11.3306 4.52491L6.38103 9.47507L5.55678 10.2993L5.5562 10.2999Z' fill='white'/%3E%3C/svg%3E%0A")
+        center center / contain no-repeat;
+    }
+  }
+}

@@ -129,6 +129,61 @@
     </div>
   </footer>
 
+  <div class="popup" id="mainPopup">
+    <div class="popup__content">
+      <div class="popup__body">
+        <button class="popup__close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+            <path d="M6 6L18 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="popup__title">Оставьте контакты</div>
+        <div class="popup__text">Мы свяжемся с вами в ближайшее время</div>
+        <div class="popup__form">
+          <form action="">
+            <div class="form-input">
+              <input type="text" name="user_name" id="footer-user-name" placeholder="Ваше имя" required />
+            </div>
+            <div class="form-input error-fields">
+              <input type="tel" name="user_tel" id="footer-user-tel" placeholder="+7 999 999 99 99" required />
+              <span>Пожалуйста заполните обязательное поле</span>
+            </div>
+            <div class="form-acceptance">
+              <label>
+                <input type="checkbox" name="acceptance-footer" value="1" checked="" />
+                <span>Отправляя заявку, я соглашаюсь с <a href="#">правилами обработки персональных данных</a></span>
+              </label>
+              </span>
+            </div>
+            <button class="btn">отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="formSuccess">
+    <div class="popup__content">
+      <div class="popup__body _center">
+        <button class="popup__close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+            <path d="M6 6L18 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="popup__icon">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="60" rx="30" fill="#44798E" />
+            <path d="M42.2222 21.1111L25.9259 38.8889L17.7777 30" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="popup__title">Спасибо за заявку</div>
+        <div class="popup__text">Мы свяжемся с вами в ближайшее время</div>
+      </div>
+    </div>
+  </div>
+
   <!--  -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

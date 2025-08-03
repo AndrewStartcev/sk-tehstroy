@@ -77,4 +77,128 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('load', checkHeader);
   window.addEventListener('scroll', checkHeader);
+
+  const popupTriggers = document.querySelectorAll('[data-popup]');
+  const closeButtonsPopup = document.querySelectorAll('.popup__close, .popup-close');
+
+  function closePopup() {
+    document.querySelectorAll('.popup.show').forEach(popup => {
+      popup.classList.remove('show');
+    });
+  }
+
+  popupTriggers.forEach(popupTrigger => {
+    popupTrigger.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      const popupId = popupTrigger.getAttribute('data-popup');
+      const popupElement = document.querySelector(popupId);
+
+      if (!popupElement) {
+        console.error(`Popup с id ${popupId} не найден.`);
+        return;
+      }
+
+      closePopup(); // Закрываем все попапы перед открытием нового
+      popupElement.classList.add('show');
+    });
+  });
+
+  closeButtonsPopup.forEach(closeButton => {
+    closeButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      closePopup();
+    });
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closePopup();
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('popup')) {
+      closePopup();
+    }
+  });
+
+  document.querySelectorAll('input[type="tel"]').forEach(input => {
+    if (input) {
+      new PhoneInputFormatter(input);
+    }
+  });
 });
+
+class PhoneInputFormatter {
+  constructor(input) {
+    this.input = input;
+    this.initEvents();
+  }
+
+  getInputNumbersValue() {
+    return this.input.value ? this.input.value.replace(/\D/g, '') : '';
+  }
+
+  onPhonePaste(e) {
+    const inputNumbersValue = this.getInputNumbersValue();
+    const pasted = e.clipboardData || window.clipboardData;
+    if (pasted) {
+      const pastedText = pasted.getData('Text');
+      if (/\D/g.test(pastedText)) {
+        this.input.value = inputNumbersValue;
+      }
+    }
+  }
+
+  onPhoneInput(e) {
+    let inputNumbersValue = this.getInputNumbersValue(),
+      selectionStart = this.input.selectionStart,
+      formattedInputValue = '';
+
+    if (!inputNumbersValue) {
+      return (this.input.value = '');
+    }
+
+    if (this.input.value.length !== selectionStart) {
+      if (e.data && /\D/g.test(e.data)) {
+        this.input.value = inputNumbersValue;
+      }
+      return;
+    }
+
+    if (['7', '8', '9'].includes(inputNumbersValue[0])) {
+      if (inputNumbersValue[0] === '9') inputNumbersValue = '7' + inputNumbersValue;
+      const firstSymbols = inputNumbersValue[0] === '8' ? '8' : '+7';
+      formattedInputValue = firstSymbols + ' ';
+      if (inputNumbersValue.length > 1) {
+        formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+      }
+      if (inputNumbersValue.length >= 5) {
+        formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+      }
+      if (inputNumbersValue.length >= 8) {
+        formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+      }
+      if (inputNumbersValue.length >= 10) {
+        formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+      }
+    } else {
+      formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+    }
+    this.input.value = formattedInputValue;
+  }
+
+  onPhoneKeyDown(e) {
+    const inputValue = this.input.value.replace(/\D/g, '');
+    if (e.keyCode === 8 && inputValue.length === 1) {
+      this.input.value = '';
+    }
+  }
+
+  initEvents() {
+    this.input.addEventListener('keydown', e => this.onPhoneKeyDown(e));
+    this.input.addEventListener('input', e => this.onPhoneInput(e), false);
+    this.input.addEventListener('paste', e => this.onPhonePaste(e), false);
+  }
+}
