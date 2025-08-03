@@ -1,0 +1,15 @@
+<svg width="94" height="64" viewBox="0 0 94 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-8" y="-8" width="110" height="80"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(4px);clip-path:url(#bgblur_0_23_19591_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="8">
+<rect width="94" height="64" rx="16" fill="white" fill-opacity="0.06"/>
+<rect x="0.5" y="0.5" width="93" height="63" rx="15.5" stroke="white" stroke-opacity="0.04"/>
+<g clip-path="url(#clip1_23_19591)">
+<path d="M77.3406 47C79.4111 46.9997 81.0896 45.3208 81.0896 43.25V20.75C81.0896 18.6794 79.4111 17.0003 77.3406 17H16.6599C14.5892 17 12.9099 18.6792 12.9099 20.75V43.25C12.9099 45.3209 14.5892 47 16.6599 47H77.3406ZM20.4099 24.5H25.1765C26.3907 24.5002 27.4593 25.3042 27.7966 26.4717L29.7849 33.3643H30.1248L32.113 26.4717C32.4504 25.3042 33.5189 24.5001 34.7332 24.5H39.4998V39.5H34.7273V30.6357H34.3865L31.6589 39.5H28.2498L25.5232 30.6357H25.1814V39.5H20.4099V24.5ZM41.5447 24.5H46.3171V33.3633H46.6589L50.0183 26.084C50.4644 25.118 51.4309 24.5 52.4949 24.5H56.5447V39.499H51.7722V30.6367H51.4314L48.072 37.915C47.6258 38.8811 46.6594 39.4989 45.5964 39.499H41.5447V24.5ZM65.28 30.6367C61.6042 30.6367 58.5498 27.9909 57.908 24.5H68.4763C71.2997 24.5001 73.5894 26.7899 73.5896 29.6133C73.5896 29.9637 73.5534 30.3059 73.4871 30.6367H65.28ZM58.5916 31.3193H73.2937C72.5905 33.3041 70.7024 34.7285 68.4773 34.7285H63.3542V39.501H58.5916V31.3193Z" fill="#FEFEFF" fill-opacity="0.2"/>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_23_19591_clip_path" transform="translate(8 8)"><rect width="94" height="64" rx="16"/>
+</clipPath><clipPath id="clip1_23_19591">
+<rect width="68.18" height="30" fill="white" transform="translate(12.91 17)"/>
+</clipPath>
+</defs>
+</svg>
