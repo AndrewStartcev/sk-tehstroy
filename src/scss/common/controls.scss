@@ -52,6 +52,45 @@
   }
 }
 
+/* Стили для пагинации */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  &__item {
+    display: inline-block;
+    padding: 3px 16px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    @include hover() {
+      background-color: #44798e;
+      color: white;
+      path {
+        fill: white;
+      }
+    }
+    &.active {
+      background-color: #44798e;
+      color: white;
+      cursor: default;
+    }
+  }
+  .dots {
+    color: #343b3f;
+    font-family: 'Inter Tight';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+}
+
 .btn {
   display: flex;
   justify-self: flex-start;
