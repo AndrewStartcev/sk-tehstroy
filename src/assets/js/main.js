@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // Находим все элементы с классом has-submenu
   const submenuParents = document.querySelectorAll('.menu-parent');
   const header = document.querySelector('.header');
+  const burger = document.querySelector('.header__burger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  burger.addEventListener('click', function (e) {
+    mobileMenu.classList.toggle('show');
+    burger.classList.toggle('show');
+  });
 
   function checkHeader() {
     if (window.scrollY > 30) {
@@ -43,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Для мобильных устройств - по клику
     link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1159) {
         // Мобильное устройство
         e.preventDefault();
         const isOpen = submenu.style.display === 'block';
@@ -52,13 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.sub-menu').forEach(function (menu) {
           if (menu !== submenu) {
             menu.style.display = 'none';
-            link.classList.add('show');
+            link.classList.toggle('show');
           }
         });
 
         // Открываем/закрываем текущее
         submenu.style.display = isOpen ? 'none' : 'block';
-        link.classList.toogle('show');
       }
     });
   });
