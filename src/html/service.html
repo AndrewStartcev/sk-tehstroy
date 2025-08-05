@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="Ru-ru">
+  @@include("chunk/head.html", {"title": "Статьи",})
+
+  <body>
+    @@include("chunk/header.html")
+
+    <main class="main">
+      <nav class="breadcrumbs">
+        <ul class="breadcrumbs__container">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><span>Изготовление металлоконструкций</span></li>
+        </ul>
+      </nav>
+      <section class="service-hero">
+        <div class="service-hero__container">
+          <div class="service-hero__header">
+            <h1>Изготовление металлоконструкций</h1>
+          </div>
+          <div class="service-hero__offer">
+            <p>Изготовление надёжных и долговечных металлических конструкций для вашего бизнеса</p>
+            <button class="btn" data-popup="#mainPopup">оставить заявку</button>
+          </div>
+        </div>
+        <div class="service-hero__cover">
+          <img src="assets/img/service-cover.jpg" alt="" />
+        </div>
+      </section>
+      <!-- Service Hero -->
+      <section class="service-type">
+        <div class="service-type__container">
+          <div class="service-type__header"></div>
+          <div class="service-type__grid"></div>
+        </div>
+      </section>
+      <!-- Service Type -->
+    </main>
+
+    @@include("chunk/footer.html")
+    <!--  -->
+    @@include("chunk/script.html")
+  </body>
+</html>
