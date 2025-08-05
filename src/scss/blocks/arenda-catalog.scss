@@ -1,0 +1,133 @@
+.arenda-catalog {
+  margin: 100px 0 140px;
+  &__container {
+    h2 {
+      color: #44798e;
+      font-size: 64px;
+    }
+  }
+
+  &__grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 0 0 calc((100% / 2) - 40px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: #1e1f21;
+    min-height: 390px;
+    position: relative;
+    padding: 40px 30px;
+    &::after {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 44px;
+      background: url("data:image/svg+xml,%3Csvg width='43' height='43' viewBox='0 0 43 43' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M42.5 43H37.5V9.03516L1.76758 44.7676L-1.76758 41.2324L33.9648 5.5H0V0.5H42.5V43Z' fill='%2344798E' /%3E%3C/svg%3E%0A")
+        center center / contain no-repeat;
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      filter: brightness(250%);
+      opacity: 0.8;
+    }
+  }
+
+  &__name {
+    color: #fff;
+    font-family: $font-family-heading;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  &__parametrs {
+    color: #b5b5b5;
+    margin-top: 40px;
+    font-size: 24px;
+    font-family: $font-family-heading;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    mark {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      font-size: 24px;
+      color: #44798e;
+    }
+  }
+
+  &__images {
+    max-width: 400px;
+    max-height: 240px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+@include media-tablet-horizontal {
+  .arenda-catalog {
+    &__grid {
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+}
+@include media-mobile-horizontal {
+  .arenda-catalog {
+    margin: 80px 0 100px;
+    &__container {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    &__grid {
+      margin-top: 40px;
+      grid: 20px;
+    }
+
+    &__item {
+      min-height: 210px;
+      padding: 30px 20px;
+      &::after {
+        width: 20px;
+        height: 20px;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+
+    &__name {
+      font-size: 24px;
+    }
+
+    &__parametrs {
+      margin-top: 20px;
+      font-size: 16px;
+      mark {
+        font-size: 16px;
+      }
+    }
+
+    &__images {
+      max-width: 152px;
+      position: absolute;
+      bottom: auto;
+      top: 30px;
+      right: 10px;
+    }
+  }
+}

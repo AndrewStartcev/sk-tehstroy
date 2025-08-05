@@ -1,0 +1,139 @@
+.service-why-us {
+  margin: 140px 0;
+  &__container {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: -130px;
+      right: -105px;
+      content: '';
+      width: 315px;
+      height: 210px;
+      background: url("data:image/svg+xml,%3Csvg width='315' height='210' viewBox='0 0 315 210' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_222_2613)'%3E%3Cpath d='M0 209.917L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M28.1289 104.958L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M104.976 28.124L209.951 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M209.952 0L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M314.93 28.124L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M27.7695 209.917L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M30.5381 178.286L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M70.3916 92.8318L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M147.643 38.7515L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M241.588 30.5325L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M64.8525 157.114L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M110.697 91.6504L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M183.139 57.8762L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3Cpath d='M262.766 64.8416L209.952 209.917' stroke='%23B5B5B5' stroke-width='0.75' stroke-miterlimit='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_222_2613'%3E%3Crect width='315' height='210' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+        center center / contain no-repeat;
+    }
+    h2 {
+      font-size: 64px;
+      color: #44798e;
+    }
+  }
+
+  &__grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  &__item {
+    flex: 0 0 calc((100% / 4) - 40px);
+    background-color: #fff;
+    padding: 30px 30px 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    h3 {
+      font-size: 24px;
+      color: #1e1f21;
+    }
+    p {
+      margin-top: auto;
+      font-size: 14px;
+      color: #4d4f50;
+    }
+  }
+
+  &__image {
+    flex: 0 0 calc((100% / 4) - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include media-tablet-horizontal {
+  .service-why-us {
+    margin: 100px 0;
+    &__container {
+      h2 {
+        font-size: 64px;
+        color: #44798e;
+      }
+    }
+
+    &__grid {
+      margin-top: 50px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    &__item {
+      flex: 1 1 calc((100% / 2) - 40px);
+      background-color: #fff;
+      padding: 30px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      h3 {
+        font-size: 24px;
+        color: #1e1f21;
+      }
+      p {
+        margin-top: auto;
+        font-size: 14px;
+        color: #4d4f50;
+      }
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .service-why-us {
+    &__container {
+      &::after {
+        top: -30px;
+        right: -20px;
+        width: 147px;
+        height: 99px;
+      }
+      h2 {
+        font-size: 40px;
+        width: 70%;
+      }
+    }
+
+    &__grid {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__item {
+      flex: 1 1 auto;
+      padding: 20px 20px 30px;
+      gap: 40px;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}

@@ -152,6 +152,16 @@ document.addEventListener('DOMContentLoaded', function () {
       prevEl: '.hero .swiper-btn-prev',
     },
   });
+
+  new Swiper('.service-prices__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: '.service-prices__btn-next',
+      prevEl: '.service-prices__btn-prev',
+    },
+  });
+
   new Swiper('.gallary-block__slider', {
     slidesPerView: 1.15,
     spaceBetween: 10,

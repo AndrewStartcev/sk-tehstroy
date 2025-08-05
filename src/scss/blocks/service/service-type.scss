@@ -61,7 +61,11 @@
       font-weight: 700;
       line-height: 100%;
     }
-    p {
+    ul {
+      padding-left: 10px;
+    }
+    p,
+    li {
       font-family: 'Inter Tight';
       font-size: 14px;
       font-style: normal;
