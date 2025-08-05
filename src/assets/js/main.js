@@ -134,6 +134,43 @@ document.addEventListener('DOMContentLoaded', function () {
       new PhoneInputFormatter(input);
     }
   });
+
+  new Swiper('.hero__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: '.hero .swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.hero .swiper-btn-next',
+      prevEl: '.hero .swiper-btn-prev',
+    },
+  });
+  new Swiper('.gallary-block__slider', {
+    slidesPerView: 1.15,
+    spaceBetween: 10,
+    loop: false,
+    navigation: {
+      nextEl: '.gallary-block__btn-next',
+      prevEl: '.gallary-block__btn-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
 });
 
 class PhoneInputFormatter {

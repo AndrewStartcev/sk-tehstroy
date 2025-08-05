@@ -51,7 +51,6 @@
     }
   }
 }
-
 /* Стили для пагинации */
 .pagination {
   display: flex;
@@ -110,10 +109,41 @@
   @include hover {
     background: darken($color: #44798e, $amount: 10);
   }
+  &:active {
+    transform: scale(0.08);
+  }
+}
+
+.btn-cricle {
+  color: #fff;
+  font-family: $font-family-heading;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 88px 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 500px;
+  background: #44798e;
+  transition: all 0.5s ease;
+  @include hover() {
+    color: #fff;
+    background: #44798e linear-gradient(120deg, #44798e 5.99%, #93bdce 90.38%);
+  }
+  &:active {
+    transform: scale(0.8);
+  }
 }
 
 @include media-mobile-horizontal {
   .breadcrumbs {
     margin-bottom: 40px;
+  }
+
+  .btn-cricle {
+    font-size: 14px;
+    padding: 31px 12px;
   }
 }
