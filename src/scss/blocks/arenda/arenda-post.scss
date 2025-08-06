@@ -1,0 +1,44 @@
+.arenda-post {
+  margin: 100px 0 140px;
+  &__container {
+    h2 {
+      font-size: 64px;
+      color: #44798e;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 30px 0;
+    }
+    p,
+    li {
+      max-width: 860px;
+      color: #343b3f;
+      font-size: 16px;
+    }
+  }
+}
+@include media-mobile-horizontal {
+  .arenda-post {
+    margin: 80px 0 100px;
+    &__container {
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        margin: 20px 0;
+      }
+      ul,
+      li {
+        margin-left: 0px;
+        padding-left: 20px;
+      }
+      li {
+        padding-left: 10px;
+      }
+      p,
+      li {
+        font-size: 14px;
+      }
+    }
+  }
+}

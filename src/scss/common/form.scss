@@ -73,3 +73,14 @@
     }
   }
 }
+
+.form-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 10px;
+  margin-bottom: 10px;
+  @include media-mobile-horizontal {
+    flex-direction: column;
+  }
+}

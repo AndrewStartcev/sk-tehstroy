@@ -1,0 +1,87 @@
+.arenda-hero {
+  margin: 50px 0 100px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  &__content {
+    flex: 0 0 auto;
+    max-width: 560px;
+    padding-bottom: 92px;
+    h1 {
+      font-size: 76px;
+    }
+    p {
+      margin-top: 40px;
+      font-size: 24px;
+      font-family: $font-family-heading;
+      mark {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        color: #44798e;
+      }
+    }
+    .btn {
+      margin-top: 40px;
+      max-width: 360px;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    max-width: 560px;
+  }
+}
+
+@include media-tablet-horizontal {
+  .arenda-hero {
+    &__container {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    &__content {
+      padding-bottom: 0px;
+    }
+
+    &__image {
+      margin-left: auto;
+    }
+  }
+}
+@include media-mobile-horizontal {
+  .arenda-hero {
+    margin: 40px 0 80px;
+    &__container {
+      position: relative;
+      padding-bottom: 90px;
+    }
+
+    &__content {
+      padding-bottom: 20px;
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      .btn {
+        max-width: calc(100% - 40px);
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+      }
+    }
+
+    &__image {
+      margin: 0 auto;
+    }
+  }
+}

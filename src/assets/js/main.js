@@ -156,9 +156,27 @@ document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.service-prices__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
+
     navigation: {
       nextEl: '.service-prices__btn-next',
       prevEl: '.service-prices__btn-prev',
+    },
+  });
+
+  new Swiper('.arenda-gallery__slider', {
+    slidesPerView: 1,
+    spaceBetween: 100,
+    loop: true,
+    initialSlide: 1,
+    centeredSlides: true,
+    pagination: {
+      el: '.arenda-gallery .swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.arenda-gallery__btn-next',
+      prevEl: '.arenda-gallery__btn-prev',
     },
   });
 

@@ -1,0 +1,65 @@
+.arenda-form {
+  margin: 140px 0;
+  &__block {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #1e1f21;
+    color: #e0e0e0;
+    overflow: hidden;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+
+  &__content {
+    padding: 60px 40px 70px;
+    h2 {
+      font-size: 64px;
+    }
+    p {
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    .btn {
+      margin-top: 20px;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    flex: 0 0 auto;
+    max-width: 530px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .arenda-form {
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .arenda-form {
+    margin: 80px 0 60px;
+    &__content {
+      padding: 50px 20px;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 14px;
+        margin: 20px 0 30px;
+      }
+    }
+  }
+}
