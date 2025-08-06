@@ -7,12 +7,17 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
+    &._top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
   }
 
   &__body {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+
     &::after {
       content: '';
       display: block;
@@ -21,7 +26,7 @@
       background: url('../img/hero-metalic.png');
       position: absolute;
       bottom: -36px;
-      right: -161px;
+      right: 0px;
     }
     h1 {
       margin: 0;

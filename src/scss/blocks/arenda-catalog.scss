@@ -38,6 +38,11 @@
       filter: brightness(250%);
       opacity: 0.8;
     }
+    @include hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__name {
@@ -72,6 +77,9 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    img {
+      transition: all 0.5s ease;
+    }
   }
 }
 @include media-tablet-horizontal {
